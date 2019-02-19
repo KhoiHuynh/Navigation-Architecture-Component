@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/navigation_map">
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.example.khoi.fragnavtest.MapFragment"
+        android:label="MapFragment" />
+    <fragment
+        android:id="@+id/navigation_host"
+        android:name="com.example.khoi.fragnavtest.HostFragment"
+        android:label="fragment_host"
+        tools:layout="@layout/fragment_host" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/navigation_host2" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_host2"
+        android:name="com.example.khoi.fragnavtest.Host2Fragment"
+        android:label="fragment_host2"
+        tools:layout="@layout/fragment_host2" >
+        <argument
+            android:name="address"
+            app:argType="string"
+            android:defaultValue="None" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.khoi.fragnavtest.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
